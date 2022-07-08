@@ -1,6 +1,7 @@
 from kivy.lang import Builder
 from kivymd.app import MDApp
 from model import *
+import view
 from controller import *
 
 class MainApp(MDApp):
@@ -8,6 +9,8 @@ class MainApp(MDApp):
     self.theme_cls.theme_style = "Dark"
     self.theme_cls.primary_palette= "BlueGray"
     return Builder.load_file('main.kv')
+
+
 
   #define de quem é a vez
   turn = "X"
@@ -26,19 +29,7 @@ class MainApp(MDApp):
     win(self)
 
   def presser(self, btn): 
-    if self.turn == "X":
-      btn.text = "X"
-      btn.disabled = True
-      self.root.ids.score.text = "VEZ DE O"
-      self.turn = "O"
-    else:
-      btn.text = "O"
-      btn.disabled = True
-      self.root.ids.score.text = "VEZ DE X"
-      self.turn = "X"
-    
-    #checa se alguém ganhou
-    win(self)
+    view.presser(self, btn)
 
   def restart(self): 
     #X sempre começa

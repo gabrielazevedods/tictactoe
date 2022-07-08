@@ -1,6 +1,7 @@
 from kivy.lang import Builder
 from kivymd.app import MDApp
 from controller import *
+from view import *
 
 #caso de empate
 #MODEL
