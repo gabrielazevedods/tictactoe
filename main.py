@@ -6,6 +6,7 @@ from controller import *
 
 class MainApp(MDApp):
   def build(self):
+    #FUNÇÃO DO KIVY PARA COLORIR A TELA
     self.theme_cls.theme_style = "Dark"
     self.theme_cls.primary_palette= "BlueGray"
     return Builder.load_file('main.kv')

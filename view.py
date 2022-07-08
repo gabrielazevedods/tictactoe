@@ -5,6 +5,9 @@ import model
 
 
 def presser(app, btn): 
+	#FUNÇÃO CHAMADA AO APERTAR O BOTÃO
+	#COLOCA NO BOTÃO O JOGADOR QUE APERTOU (X OU BOLA)
+	#E DIZ DE QUEM É A VEZ
     if app.turn == "X":
       btn.text = "X"
       btn.disabled = True
@@ -16,5 +19,5 @@ def presser(app, btn):
       app.root.ids.score.text = "VEZ DE X"
       app.turn = "X"
     
-    #checa se alguém ganhou
+    #CHECA SE ALGUÉM GANHOU
     model.win(app)

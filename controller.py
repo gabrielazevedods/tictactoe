@@ -2,14 +2,18 @@ from kivy.lang import Builder
 from kivymd.app import MDApp
 from model import *
 
-#CONTROLLER
+#CONTROLLER: intermediário entre o model e a view
+
 def end_game(app, a, b, c):
+  #FUNÇÃO CHAMADA AO ENCERRAR O JOGO. MUDA A VARIÁVEL "WINNER" PARA TRUE, E
+  #COLORE OS BOTÕES ONDE O USUÁRIO BATEU
     app.winner = True
     a.color = "red"
     b.color = "red"
     c.color = "red"
 
-    #desabilitando todos os botões
+    #DESABILITA TODOS OS BOTÕES, PARA NINGUÉM MAIS JOGAR APÓS
+    #O FIM DE JOGO
     disable_all_buttons(app)
 
     #mostrando quem ganhou
